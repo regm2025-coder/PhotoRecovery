@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -18,7 +19,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: '17'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
@@ -31,7 +32,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: "8.9"
+          gradle-version: '8.9'
 
       - name: Build debug APK
         run: gradle :app:assembleDebug --no-daemon --stacktrace
